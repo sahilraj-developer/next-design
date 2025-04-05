@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useTheme } from "next-themes"
 import { motion } from "framer-motion"
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline"
+import Image from "next/image"
 
 export default function Header() {
   const [mounted, setMounted] = useState(false)
@@ -23,7 +24,7 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Flowers & Saints</span>
-            <img
+            <Image
               className="h-8 w-auto"
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/creative-SW6QDQbcVuwPgb6a2CYtYmRbsJa4k1.png"
               alt="Flowers & Saints Logo"

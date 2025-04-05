@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring, useInView, MotionValue } from "framer-motion"
 
 const timelineEvents = [
   {
@@ -48,7 +48,11 @@ const timelineEvents = [
   },
 ]
 
-const FlowerIcon = ({ progress }: { progress: number }) => (
+type FlowerIconProps = {
+    progress: MotionValue<number>; // 👈 this is the fix
+  };
+
+const FlowerIcon = ({ progress }: FlowerIconProps) => (
   <svg
     viewBox="0 0 24 24"
     fill="none"
@@ -108,7 +112,7 @@ export default function Timeline() {
             className="sticky top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-primary"
             style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}
           >
-            <FlowerIcon progress={useTransform(scrollYProgress, [0, 1], [0.5, 1]) as any} />
+           <FlowerIcon progress={useTransform(scrollYProgress, [0, 1], [0.5, 1])} />
           </motion.div>
 
           {timelineEvents.map((event, index) => (
