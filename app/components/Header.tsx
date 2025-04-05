@@ -28,6 +28,7 @@ export default function Header() {
               className="h-8 w-auto"
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/creative-SW6QDQbcVuwPgb6a2CYtYmRbsJa4k1.png"
               alt="Flowers & Saints Logo"
+              
             />
           </Link>
         </div>
